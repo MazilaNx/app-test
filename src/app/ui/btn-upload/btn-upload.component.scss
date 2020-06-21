@@ -1,0 +1,33 @@
+.input-wrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+  text-align: center;
+
+  .input-file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .input-file-button {
+    padding: 13px;
+    border-radius: 10px;
+    background: #22A4DC;
+    transition: .3s;
+    cursor: pointer;
+
+    .input-file-button-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: #FFFFFF;
+    }
+
+    &:hover {
+      background: #41c6fd;
+    }
+  }
+}

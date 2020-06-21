@@ -1,0 +1,69 @@
+.notification {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  bottom: 60px;
+  right: 40px;
+  animation: fade-in 0.3s ease-in-out;
+  opacity: .85;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #313643CC;
+
+  .toast {
+    position: relative;
+    pointer-events: auto;
+    overflow: hidden;
+    padding: 15px 15px 15px 70px;
+    width: 225px;
+    color: #fff;
+    opacity: 1;
+
+    .message {
+      word-wrap: break-word;
+      min-height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      padding: 5px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.is-danger {
+    .toast {
+      background: url("../../../assets/img/copy-error.png");
+      background-position: 15px center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.is-success {
+    .toast {
+      padding: 15px 15px 15px 15px;
+      background-position: 15px center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &.is-info {
+    .toast {
+      background: url("../../../assets/img/copy-success.png");
+      background-position: 15px center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+}

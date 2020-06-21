@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 10px;
+
+  .title {
+    font-size: 32px;
+    color: #313643;
+  }
+}
+
+.content {
+  background: #fff;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 40px 60px;
+
+  @media (max-width: 1023px) {
+    padding: 2%;
+    box-sizing: border-box;
+  }
+}
