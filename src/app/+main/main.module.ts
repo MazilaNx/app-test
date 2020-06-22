@@ -8,6 +8,7 @@ import {ProcessingJsonComponent} from './processing-json/processing-json.compone
 import {NotifyService} from '../core/notify.service';
 import {ItemListComponent} from './processing-json/item-list/item-list.component';
 import {ItemContentComponent} from "./processing-json/item-content/item-content.component";
+import {PipesModule} from "../pipes/pipes.module";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import {ItemContentComponent} from "./processing-json/item-content/item-content.
     CoreModule,
     RouterModule,
     UiModule,
+    PipesModule
   ],
   declarations: [
     UploadJsonComponent,

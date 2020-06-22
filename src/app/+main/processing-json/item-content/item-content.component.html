@@ -2,7 +2,7 @@
   <div class="title-wrapper">
     {{itemRow.key}}
     <span>
-          {{ getTypeOf(itemRow.value) === 'object' ?  '{' + ObjectSize (itemRow.value) + '}' : getTypeOf(itemRow.value) === 'array' ? '[' + itemRow.value.length + ']' : ' : ' + itemRow.value}}
+      {{ getTypeOf(itemRow.value)  | getUnit: itemRow }}
         </span>
     <img class="copy" src="../../../../assets/img/copy-el.png" (click)="$event.stopImmediatePropagation()" [text-copy]="getCopyString(itemRow.key, itemRow.value)" alt="">
   </div>
