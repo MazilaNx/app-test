@@ -8,8 +8,6 @@ import {UploadService} from '../../core/upload.service';
   styleUrls: ['./upload-json.component.scss']
 })
 export class UploadJsonComponent {
-  public loading;
-
   constructor(
     private readonly router: Router,
     private uploadService: UploadService,
