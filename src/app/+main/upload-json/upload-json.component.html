@@ -1,5 +1,5 @@
 <app-btn-upload></app-btn-upload>
-<div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
-  <input hidden type="file" id="file" #fileInput (change)="uploadFile($event)">
+<div class="uploadfilecontainer" (click)="$event.preventDefault()" appDragDrop (onFileDropped)="uploadFile($event)">
+  <input hidden type="file" id="file">
   <label for="file">ПЕРЕТАЩИТЕ ФАЙЛ СЮДА</label>
 </div>
