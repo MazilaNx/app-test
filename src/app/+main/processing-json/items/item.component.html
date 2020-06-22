@@ -12,7 +12,7 @@
         <p class="empty" *ngIf="!item.value.length && getTypeOf(item.value) === 'array'">
           (empty array)
         </p>
-        <app-data-items [dataItems]="item.value" *ngIf="getTypeOf(item.value) === 'object' || getTypeOf(item.value) === 'array'"></app-data-items>
+        <app-data-items [dataItems]="item.value"></app-data-items>
       </div>
     </li>
   </ul>
