@@ -38,12 +38,30 @@
     }
   }
 
-
-
-
-
   .title-wrapper {
     padding-left: 25px;
+
+    .title, .value {
+      color: #888EA7;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 31px;
+      transition: .3s;
+
+
+    }
+
+    .title {
+      &.any {
+        color: #313643;
+      }
+    }
+
+    .value {
+      &.any {
+        color: #AAC72E;
+      }
+    }
 
     .copy {
       display: none;

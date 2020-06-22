@@ -8,26 +8,9 @@ import {Component, Input} from '@angular/core';
 export class ItemContentComponent {
   @Input() itemRow;
   flagExpand: boolean = false;
-  currentTypeOf: string;
 
   constructor() {
     this.flagExpand = false;
-  }
-
-  getTypeOf(obj) {
-    if (typeof(obj) === 'boolean') {
-      this.currentTypeOf = 'boolean';
-    }
-    if (typeof(obj) === 'string') {
-      this.currentTypeOf = 'string';
-    }
-    if (typeof(obj) === 'object') {
-      this.currentTypeOf = 'object';
-    }
-    if (Array.isArray(obj)) {
-      this.currentTypeOf = 'array';
-    }
-    return this.currentTypeOf;
   }
 
   ObjectSize(obj) {

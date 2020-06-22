@@ -1,13 +1,15 @@
-<li class="item" [ngClass]="{'expand': getTypeOf(itemRow.value) === 'object' || getTypeOf(itemRow.value) === 'array', 'active': flagExpand}" (click)="toggleExpand($event)">
+<li class="item" [ngClass]="{'expand': (itemRow.value | getType) === 'object' || (itemRow.value | getType) === 'array', 'active': flagExpand}" (click)="toggleExpand($event)">
   <div class="title-wrapper">
-    {{itemRow.key}}
-    <span>
-      {{ getTypeOf(itemRow.value)  | getUnit: itemRow }}
-        </span>
+    <span class="title" [ngClass]="itemRow.value | getType">
+      {{itemRow.key}}
+    </span>
+    <span class="value" [ngClass]="itemRow.value | getType">
+      {{ (itemRow.value | getType) | getUnit: itemRow }}
+    </span>
     <img class="copy" src="../../../../assets/img/copy-el.png" (click)="$event.stopImmediatePropagation()" [text-copy]="getCopyString(itemRow.key, itemRow.value)" alt="">
   </div>
-  <div class="wrapper-expand" *ngIf="flagExpand">
-    <p class="empty" *ngIf="!itemRow.value.length && getTypeOf(itemRow.value) === 'array'">
+  <div *ngIf="flagExpand">
+    <p class="empty" *ngIf="!itemRow.value?.length && (itemRow.value | getType)  === 'array'">
       (empty array)
     </p>
     <app-data-list [dataItems]="itemRow.value"></app-data-list>

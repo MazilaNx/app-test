@@ -1,5 +1,5 @@
 <div *ngFor="let item of dataItems | keyvalue">
-  <ul class="list" [ngClass]="{'default': getTypeOf(item.value) === 'object' || getTypeOf(item.value) === 'array', 'non-extend': getTypeOf(item.value) !== 'object' && getTypeOf(item.value) !== 'array'}">
+  <ul class="list">
     <item-content [itemRow]= "item"></item-content>
   </ul>
 </div>
