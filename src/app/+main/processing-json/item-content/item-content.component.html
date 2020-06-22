@@ -1,0 +1,15 @@
+<li class="item" [ngClass]="{'expand': getTypeOf(itemRow.value) === 'object' || getTypeOf(itemRow.value) === 'array', 'active': flagExpand}" (click)="toggleExpand($event)">
+  <div class="title-wrapper">
+    {{itemRow.key}}
+    <span>
+          {{ getTypeOf(itemRow.value) === 'object' ?  '{' + ObjectSize (itemRow.value) + '}' : getTypeOf(itemRow.value) === 'array' ? '[' + itemRow.value.length + ']' : ' : ' + itemRow.value}}
+        </span>
+    <img class="copy" src="../../../../assets/img/copy-el.png" (click)="$event.stopImmediatePropagation()" [text-copy]="getCopyString(itemRow.key, itemRow.value)" alt="">
+  </div>
+  <div class="wrapper-expand" *ngIf="flagExpand">
+    <p class="empty" *ngIf="!itemRow.value.length && getTypeOf(itemRow.value) === 'array'">
+      (empty array)
+    </p>
+    <app-data-list [dataItems]="itemRow.value"></app-data-list>
+  </div>
+</li>

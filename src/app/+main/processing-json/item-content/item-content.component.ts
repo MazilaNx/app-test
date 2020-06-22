@@ -1,14 +1,18 @@
 import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-data-items',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  selector: 'item-content',
+  templateUrl: './item-content.component.html',
+  styleUrls: ['./item-content.component.scss']
 })
-export class ItemsComponent {
-  @Input() dataItems;
+export class ItemContentComponent {
+  @Input() itemRow;
+  flagExpand: boolean = false;
   currentTypeOf: string;
-  currentEl: HTMLInputElement;
+
+  constructor() {
+    this.flagExpand = false;
+  }
 
   getTypeOf(obj) {
     if (typeof(obj) === 'boolean') {
@@ -38,17 +42,7 @@ export class ItemsComponent {
 
   toggleExpand(event) {
     event.stopPropagation();
-    this.currentEl = event.target.parentElement.parentElement;
-
-    if (this.currentEl.classList.contains('active')) {
-      this.currentEl.classList.remove('active');
-      this.currentEl.classList.add('default');
-      this.currentEl.querySelector('.wrapper-expand').classList.remove('active');
-    } else {
-      this.currentEl.classList.remove('default');
-      this.currentEl.classList.add('active');
-      this.currentEl.querySelector('.wrapper-expand').classList.add('active');
-    }
+    this.flagExpand = !this.flagExpand;
   }
 
   getCopyString(key, value) {

@@ -6,7 +6,8 @@ import {CoreModule} from '../core/core.module';
 import {UploadJsonComponent} from './upload-json/upload-json.component';
 import {ProcessingJsonComponent} from './processing-json/processing-json.component';
 import {NotifyService} from '../core/notify.service';
-import {ItemsComponent} from './processing-json/items/item.component';
+import {ItemListComponent} from './processing-json/item-list/item-list.component';
+import {ItemContentComponent} from "./processing-json/item-content/item-content.component";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import {ItemsComponent} from './processing-json/items/item.component';
   declarations: [
     UploadJsonComponent,
     ProcessingJsonComponent,
-    ItemsComponent
+    ItemListComponent,
+    ItemContentComponent
   ],
   exports: [],
   providers: [
