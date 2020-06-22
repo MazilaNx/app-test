@@ -1,7 +1,7 @@
 <div *ngFor="let item of dataItems | keyvalue">
   <ul class="list" [ngClass]="{'default': getTypeOf(item.value) === 'object' || getTypeOf(item.value) === 'array', 'non-extend': getTypeOf(item.value) !== 'object' && getTypeOf(item.value) !== 'array'}">
     <li class="item" (click)="toggle($event)">
-      <div class="title-wrapper" (mouseenter) ="mouseEnterEl($event)"  (mouseleave) ="mouseLeaveEl($event)">
+      <div class="title-wrapper">
         {{item.key}}
         <span>
           {{ getTypeOf(item.value) === 'object' ?  '{' + ObjectSize (item.value) + '}' : getTypeOf(item.value) === 'array' ? '[' + item.value.length + ']' : ' : ' + item.value}}

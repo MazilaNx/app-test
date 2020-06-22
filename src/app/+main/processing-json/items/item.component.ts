@@ -56,14 +56,6 @@ export class ItemsComponent {
     }
   }
 
-  mouseEnterEl(event) {
-    event.target.classList.add('hover');
-  }
-
-  mouseLeaveEl(event) {
-    event.target.classList.remove('hover');
-  }
-
   getCopyString(key, value) {
     return this.dataStringify(key) + ':' + this.dataStringify(value);
   }
