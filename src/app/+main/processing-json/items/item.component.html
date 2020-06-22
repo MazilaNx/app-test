@@ -1,6 +1,6 @@
 <div *ngFor="let item of dataItems | keyvalue">
   <ul class="list" [ngClass]="{'default': getTypeOf(item.value) === 'object' || getTypeOf(item.value) === 'array', 'non-extend': getTypeOf(item.value) !== 'object' && getTypeOf(item.value) !== 'array'}">
-    <li class="item" (click)="toggle($event)">
+    <li class="item" (click)="toggleExpand($event)">
       <div class="title-wrapper">
         {{item.key}}
         <span>

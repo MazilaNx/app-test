@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-data-items',
@@ -36,19 +36,14 @@ export class ItemsComponent {
     return size;
   }
 
-  toggle(event) {
+  toggleExpand(event) {
     event.stopPropagation();
-    if (event.target.parentElement.nodeName !== 'UL') {
-      this.currentEl = event.target.parentElement.parentElement;
-    } else {
-      this.currentEl = event.target.parentElement;
-    }
+    this.currentEl = event.target.parentElement.parentElement;
 
     if (this.currentEl.classList.contains('active')) {
       this.currentEl.classList.remove('active');
       this.currentEl.classList.add('default');
       this.currentEl.querySelector('.wrapper-expand').classList.remove('active');
-
     } else {
       this.currentEl.classList.remove('default');
       this.currentEl.classList.add('active');
