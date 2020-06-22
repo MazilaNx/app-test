@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class ItemContentComponent {
   @Input() itemRow;
-  flagExpand: boolean = false;
+  flagExpand: boolean;
 
   constructor() {
     this.flagExpand = false;
@@ -26,10 +26,6 @@ export class ItemContentComponent {
   toggleExpand(event) {
     event.stopPropagation();
     this.flagExpand = !this.flagExpand;
-  }
-
-  getCopyString(key, value) {
-    return this.dataStringify(key) + ':' + this.dataStringify(value);
   }
 
   dataStringify(data) {

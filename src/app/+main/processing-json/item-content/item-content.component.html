@@ -6,7 +6,7 @@
     <span class="value" [ngClass]="itemRow.value | getType">
       {{ (itemRow.value | getType) | getUnit: itemRow }}
     </span>
-    <img class="copy" src="../../../../assets/img/copy-el.png" (click)="$event.stopImmediatePropagation()" [text-copy]="getCopyString(itemRow.key, itemRow.value)" alt="">
+    <img class="copy" src="../../../../assets/img/copy-el.png" (click)="$event.stopImmediatePropagation()" [text-copy]="dataStringify(itemRow.key)+ ': ' + dataStringify(itemRow.value)" alt="">
   </div>
   <div *ngIf="flagExpand">
     <p class="empty" *ngIf="!itemRow.value?.length && (itemRow.value | getType)  === 'array'">
